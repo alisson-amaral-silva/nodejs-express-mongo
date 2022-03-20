@@ -54,6 +54,15 @@ class BookController {
       else res.status(204).send({ message: "Book removed Successfully" });
     });
   };
+
+  static getBookByEditor = (req, res) => {
+    const editor = req.query.editor;
+    books.find({ editor: editor }, {}, (error, books) => {
+      if (error)
+        res.status(404).send({ message: `${error.message} - book not found` });
+      else res.status(200).json(books);
+    });
+  };
 }
 
 export default BookController;
