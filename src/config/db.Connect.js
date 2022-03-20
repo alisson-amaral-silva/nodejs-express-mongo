@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
-mongoose.connect("mongodb+srv://alissonsilva:123@alura.wnhzv.mongodb.net/alura-node?retryWrites=true&w=majority");
+mongoose.connect(process.env.DB_CONNECTION);
 
 let db = mongoose.connection;
 
