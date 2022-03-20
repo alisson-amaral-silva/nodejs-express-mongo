@@ -15,10 +15,6 @@ app.use(express.json());
 
 routes(app);
 
-app.post("/books", (req, res) => {
-  res.status(201).send("Book list");
-});
-
 app.put("/books/:id", (req, res) => {
   res.status(204).send("Book list");
 });
